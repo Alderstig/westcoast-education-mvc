@@ -1,0 +1,43 @@
+@model App.ViewModels.RegisterCourseViewModel
+
+<form asp-controller="Courses" asp-action="CreateCourse" method="POST">
+    <div class="card">
+        <div class="card-header">
+            <h4>Registrera ny kurs</h4>
+        </div>
+        <div class="card-body p-3">
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseNumber"></label>
+                <input class="form-control" id="regNo" asp-for="CourseNumber" />
+                <span asp-validation-for="CourseNumber"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseTitle"></label>
+                <input class="form-control" asp-for="CourseTitle" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseDesc"></label>
+                <textarea asp-for="CourseDesc" class="form-control" id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseLength"></label>
+                <input class="form-control" asp-for="CourseLength" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="CourseLevel"></label>
+                <select asp-for="CourseLevel" class="form-control" id="exampleFormControlSelect1">
+                    <option>Nybörjare</option>
+                    <option>Medel</option>
+                    <option>Avancerad</option>
+                </select>
+            </div>
+            <div class="form-check">
+                <input asp-for="Retired" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-label" asp-for="Retired"></label>
+            </div>
+            <hr>
+            <button id="save" type="submit" class="btn btn-primary">Registrera</button>
+        </div>
+    </div>
+</form>
